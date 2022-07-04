@@ -1,23 +1,25 @@
 import {
-    Card, CardTitle, CardBody, CardText
+  Card, CardTitle, CardBody, CardText,
 } from 'reactstrap';
 
 function Error() {
-    return (<><h1>Opps! 😭</h1>
-        <Card
-        >
-            <CardBody>
-                <CardTitle tag="h5">
-                    Error 🛑
-                </CardTitle>
-                <CardText>
-                    Not authorized to view this content
-                </CardText>
+  return (
+    <>
+      <h1>Opps! 😭</h1>
+      <Card>
+        <CardBody>
+          <CardTitle tag="h5">
+            Error 🛑
+          </CardTitle>
+          <CardText>
+            Not authorized to view this content
+          </CardText>
 
-            </CardBody>
-        </Card>
+        </CardBody>
+      </Card>
 
-    </>)
+    </>
+  );
 }
 
 export default Error;

@@ -1,6 +1,6 @@
+import { Container } from 'reactstrap';
 import ContentShell from './AppContentShell';
 import Header from './components/app-header/Header';
-import { Container } from 'reactstrap';
 import { UserProvider } from './user-context';
 import ErrorBoundary from './components/ErrorBoundary';
 /**
@@ -9,12 +9,12 @@ import ErrorBoundary from './components/ErrorBoundary';
 function App() {
   return (
     <ErrorBoundary>
-    <UserProvider>
-      <Header />
-      <Container>
-        <ContentShell />
-      </Container>
-    </UserProvider>
+      <UserProvider>
+        <Header />
+        <Container>
+          <ContentShell />
+        </Container>
+      </UserProvider>
     </ErrorBoundary>
   );
 }

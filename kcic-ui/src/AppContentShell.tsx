@@ -22,11 +22,9 @@ function AppContentShell() {
   return (
     <Routes>
       <Route path={routes.HOME.PATH} element={<Home />} />
-      {currentUser.username === 'Unauthenticated' ?
-        <Route path={routes.APPROVALQUEUE.PATH} element={<Error />} />
-        :
-        <Route path={routes.APPROVALQUEUE.PATH} element={<ApprovalQueue />} />
-      }
+      {currentUser.username === 'Unauthenticated'
+        ? <Route path={routes.APPROVALQUEUE.PATH} element={<Error />} />
+        : <Route path={routes.APPROVALQUEUE.PATH} element={<ApprovalQueue />} />}
     </Routes>
   );
 }

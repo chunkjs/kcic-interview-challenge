@@ -1,14 +1,12 @@
-const getCurrencyValue = (num) => {
-    return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
+const getCurrencyValue = (num) => new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
 
-    }).format(num)
+}).format(num);
+
+const getTodaysDate = () => {
+  const today = new Date();
+  return `${String(today.getDate()).padStart(2, '0')}-${String(today.getMonth() + 1).padStart(2, '0')}-${today.getFullYear()}`;
 };
-
-const getTodaysDate = ()=>{
- const today = new Date();;
- return `${String(today.getDate()).padStart(2, '0')}-${String(today.getMonth() + 1).padStart(2, '0')}-${today.getFullYear()}`   
-}
 
 export { getCurrencyValue, getTodaysDate };
