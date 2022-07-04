@@ -1,0 +1,29 @@
+import { createServer, Model } from "miragejs";
+import { claims } from './seed-data';
+let newId = 4
+
+export default function () {
+  console.log('Mirage server started!');
+  return createServer({
+    models: {
+        claim: Model,
+      },
+  routes() {
+    this.get("/api/Claims", (schema) => {
+      return schema.claims.all()
+    })
+
+    this.post("/api/Claims", (schema, request) => {
+      let attrs = JSON.parse(request.requestBody)
+      attrs.id = newId++;
+      return schema.claims.create(attrs);
+    })
+  },
+  seeds(server) {
+    server.create("claim", claims[0])
+    server.create("claim", claims[1])
+    server.create("claim", claims[2])
+  },
+
+});
+}
