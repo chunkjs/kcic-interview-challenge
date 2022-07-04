@@ -1,10 +1,9 @@
 import { createServer, Model } from 'miragejs';
-import { claims } from './seed-data';
+import claims from './seed-data';
 
 let newId = 4;
 
-export default function () {
-  console.log('Mirage server started!');
+export default function makeServer() {
   return createServer({
     models: {
       claim: Model,

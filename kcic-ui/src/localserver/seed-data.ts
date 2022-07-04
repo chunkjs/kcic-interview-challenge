@@ -37,4 +37,4 @@ const claims = [
   },
 ];
 
-export { claims };
+export default claims;

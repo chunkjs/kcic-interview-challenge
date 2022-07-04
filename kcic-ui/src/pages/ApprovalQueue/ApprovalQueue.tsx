@@ -20,6 +20,8 @@ function ApprovalQueue() {
       setClaims(data);
       setLoading(false);
     }, (error) => {
+      /* eslint-disable no-debugger, no-console */
+      console.error(error);
       setLoading(false);
     });
   }, [claimAdded]);

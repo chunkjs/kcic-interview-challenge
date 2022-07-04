@@ -21,7 +21,7 @@ function Home() {
 
               <li><p>Add a status column to the Queue to display the status of each claim.</p></li>
 
-              <li><p>Order the queue such that un-reviewed claims (those with "Pending" status) appear at the top of the queue; the rest of the queue should be sorted in ascending order.</p></li>
+              <li><p>{`Order the queue such that un-reviewed claims (those with "Pending" status) appear at the top of the queue; the rest of the queue should be sorted in ascending order.`}</p></li>
             </ul>
 
           </CardBody>

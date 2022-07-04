@@ -31,6 +31,8 @@ module.exports = {
     }
   },
   rules: {
+    "no-underscore-dangle": 'off',
+    "max-len": [1, 200],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/extensions": [

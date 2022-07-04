@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useReducer } from 'react';
+import React, {
+  createContext, useContext, useReducer, useMemo,
+} from 'react';
 
 type Action = { type: string; value: any };
 type Dispatch = (action: Action) => void;
@@ -9,7 +11,7 @@ type UserProviderProps = { children?: React.ReactNode | React.ReactNode[] };
 const UserContext = createContext<{ state: State; dispatch: Dispatch } | undefined>(undefined);
 
 const reducer = (state: State, action: Action): State => {
-  const user = state.userList.find((user) => action.value === user.id.toString());
+  const user = state.userList.find((item) => action.value === item.id.toString());
   switch (action.type) {
     case 'updateCurrentUser': {
       return { ...state, currentUser: user };
@@ -48,7 +50,7 @@ function UserProvider({ children }: { children: UserProviderProps }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = { state, dispatch };
 
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  return useMemo(() => <UserContext.Provider value={value}>{children}</UserContext.Provider>, [value]);
 }
 
 const useUserService = () => {

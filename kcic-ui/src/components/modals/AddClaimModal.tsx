@@ -17,7 +17,7 @@ function AddClaimModal({ showModal, toggle, successSave }: { showModal: boolean,
   const [error, setError] = useState(false);
   let formElement = useRef();
 
-  const modelClaim = (rawClaim) => {
+  const modelClaim = (rawClaim: any) => {
     const claim = {
       dateSubmitted: getTodaysDate(),
       firstName: rawClaim.firstName,
@@ -30,13 +30,13 @@ function AddClaimModal({ showModal, toggle, successSave }: { showModal: boolean,
     };
     return claim;
   };
-  const onSubmit = (form) => {
-    addClaim(modelClaim(form.formData)).then((data) => {
+  const onSubmit = (form: any) => {
+    addClaim(modelClaim(form.formData)).then(() => {
       successSave();
       toggle();
-    }, (error) => {
+    }, (err) => {
       setError(true);
-      console.error(error);
+      console.error(err);
     });
   };
 

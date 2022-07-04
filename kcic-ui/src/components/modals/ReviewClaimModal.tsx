@@ -1,16 +1,9 @@
-import { useState } from 'react';
 import {
   Button, Modal, ModalFooter,
-  ModalHeader, ModalBody, Alert, Input, Form, Label,
+  ModalHeader, ModalBody, Input, Form, Label,
 } from 'reactstrap';
-import { useUserService } from '../../user-context';
 
 function ReviewClaimModal({ showModal, toggle, status }: { showModal: boolean, toggle: () => void, status: number }) {
-  const [error, setError] = useState(false);
-  const { state: user } = useUserService();
-  console.log('status');
-  console.log(status);
-
   return (
     <div>
       <Modal isOpen={showModal} toggle={toggle}>
@@ -24,7 +17,6 @@ function ReviewClaimModal({ showModal, toggle, status }: { showModal: boolean, t
 
             <Input />
           </Form>
-          {error && <Alert color="danger">Error</Alert>}
         </ModalBody>
         <ModalFooter>
           {status === 0
