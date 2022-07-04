@@ -1,21 +1,41 @@
 {
   "name": "kcic-ui",
   "private": true,
+  "author": "Valerie Torres",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "lint": "npx eslint --ext .ts,.tsx,.js src",
+    "lint:fix": "npx eslint --ext .ts,.tsx,.js src --fix",
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.1.3",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-jsonschema-form": "^1.8.1",
+    "react-router-dom": "^6.3.0",
+    "reactstrap": "^9.1.1"
   },
   "devDependencies": {
+    "@types/eslint": "^8.4.3",
+    "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/react-jsonschema-form": "^1.7.8",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
     "@vitejs/plugin-react": "^1.3.0",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "miragejs": "^0.1.45",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "vite-plugin-eslint": "^1.6.1"
   }
 }
